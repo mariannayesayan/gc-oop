@@ -20,7 +20,7 @@ class Grade:
         else:
             print "Not valid"
 
-gradee = Grade (130)
-eggradee.is_Valid()    
+examplegrade = Grade (130)
+examplegrade.is_Valid()    
 
 
