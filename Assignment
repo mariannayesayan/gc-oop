@@ -12,7 +12,22 @@ class Assignment:
 
     def _get_(self, name):
             return self.name
+            
+    def _get_(self, percantage):
+            return self.percenateg
 
+    def _get_(self, grade):
+            return self.grade
+
+    def _get_(self, deadline):
+            return self.deadline
+
+    def _get_(self, status):
+            return self.status
+
+    def _get_(self, description):
+            return self.description
+            
     def _set_(self, name):
             return self.name
 
@@ -35,9 +50,3 @@ class Assignment:
         return self
     def is_Graded (self):
         return self
-
-
-
-
-
-
