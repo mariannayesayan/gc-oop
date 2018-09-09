@@ -1,0 +1,43 @@
+class Course:
+
+    def __init__(self, coursename, ID, credit, lecturer, sssignment):
+        self.coursename = coursename
+        self.ID = ID
+        self.credit= credit
+        self.lecturer= lecturer
+        self.assignment = assignment
+
+    def _set_(self, coursename):
+            return self.coursename
+
+    def _set_(self, ID):
+            return self.ID
+
+    def _set_(self, credit):
+            return self.credit
+
+    def _set_(self, lecturer):
+            return self.lecturer
+
+    def _set_(self, assignment):
+            return self.assignment
+
+    def _get_(self, coursename ):
+            return self.coursename
+
+    def _get_(self, ID ):
+            return self.ID
+
+    def _get_(self, credit ):
+            return self.credit
+
+    def _get_(self, lecturer ):
+            return self.lecturer
+
+    def _get_(self, assingnment ):
+            return self.assignment
+
+    
+
+
+
