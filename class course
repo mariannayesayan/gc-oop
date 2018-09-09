@@ -22,19 +22,19 @@ class Course:
     def _set_(self, assignment):
             return self.assignment
 
-    def _get_(self, coursename ):
+    def _get_(self, coursename):
             return self.coursename
 
-    def _get_(self, ID ):
+    def _get_(self, ID):
             return self.ID
 
-    def _get_(self, credit ):
+    def _get_(self, credit):
             return self.credit
 
-    def _get_(self, lecturer ):
+    def _get_(self, lecturer):
             return self.lecturer
 
-    def _get_(self, assingnment ):
+    def _get_(self, assingnment):
             return self.assignment
 
     
