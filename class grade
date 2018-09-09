@@ -1,0 +1,26 @@
+class Grade:
+    min = 0
+    max = 100
+
+    def __init__(self, grade):
+        self.grade = grade
+
+    def _get_(self):
+            return self.grade
+
+    def _set_(self, grade):
+            return self.grade
+
+    def displayGrade (self) :
+        print " the grade is" , self.grade
+
+    def is_Valid (self) :
+        if self.grade <= self.max  and self.grade > self.min:
+            print "Not valid"
+        else:
+            print "Not valid"
+
+gradee = Grade (130)
+eggradee.is_Valid()    
+
+
