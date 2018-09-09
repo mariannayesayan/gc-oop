@@ -3,7 +3,6 @@ class Assignment:
     max = 100
 
     def __init__(self, name, percentage, grade, deadline, status, desciprion):
-        self.grade = grade
         self.name = name
         self.percentage = percentage
         self.grade = grade
