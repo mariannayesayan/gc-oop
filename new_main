@@ -1,0 +1,269 @@
+#!/usr/bin/python
+Class user:
+
+   def __init__ (self, firstname, lastname, ID, password, username, mail):
+      self.firstname = firstname
+      self.lastname = lastname
+      self.ID = ID
+      self.password = password
+      self.username = username
+      self.mail = mail
+
+
+   def set firstname(self, firstname)
+   if firstname != "":
+      self.firtname = firstname
+      return self.firstname
+
+
+   def set lastname(self, lastname)
+   if lastname != "":
+      self.lastname = lastname
+    return self.lasttname
+
+
+   def set ID(self, ID)
+   if ID != "":
+      self.ID = Id
+      return self.ID
+
+
+   def set password(self, password)
+   if password != "":
+      self.password = password
+      return self.password
+
+
+   def set username(self, username)
+   if username != "":
+    self.username = username
+    return self.username
+
+
+    def set mail(self, mail)
+    if mail != "":
+       self.mail = mail
+       return self.mail
+
+
+    def sget firstname(self, firstname)
+    if firstname != "":
+       self.firtname = firstname
+       return self.firstname
+
+
+    def get lastname(self, lastname)
+    if lastname != "":
+       self.lastname = lastname
+       return self.lasttname
+
+
+    def get ID(self, ID)
+    if ID != "":
+       self.ID = Id
+       return self.ID
+
+
+    def get password(self, password)
+    if password != "":
+       self.password = password
+       return self.password
+
+
+    def get username(self, username)
+    if username != "":
+       self.username = username
+       return self.username
+
+
+    def get mail(self, mail)
+    if mail != "":
+       self.mail = mail
+       return self.mail
+
+Class Student(User):
+
+   def __init__ (self, firstname, lastname, ID, password, username, mail, courses, assignment, gpa):
+       self.courses = courses
+       self.assignment = assignment
+       self.gpa = gpa
+       user.init(self, firstname, lastname, ID, password, username, mail):
+
+
+   def set courses(self, courses):
+       self.courses = courses
+       return self.courses
+
+
+   def set assignment(self, assignment):
+       self.assignment = assignment
+       return self.assignment
+
+
+   def set gpa(self, gpa):
+       self.gpa = gpa
+       return self.gpa
+
+
+     def get courses(self, courses):
+         self.courses = courses
+         return self.courses
+
+
+     def get assignment(self, assignment):
+         self.assignment = assignment
+         return self.assignment
+
+
+     def get gpa(self, gpa):
+         self.gpa = gpa
+         return self.gpa
+
+
+Class lecturer (User):
+
+   def __init__ (self, firstname, lastname, ID, password, username, mail, office):
+       self.office = office
+       user.init(self, firstname, lastname, ID, password, username, mail)
+
+
+   def set office(self, office):
+       self.office = office
+       return self.office
+
+   def get office (self, office):
+        self.office = office
+        return self. office
+
+
+class Grade:
+    min = 0
+    max = 100
+
+    def __init__(self, grade):
+        self.grade = grade
+
+    def _get_(self):
+            return self.grade
+
+    def _set_(self, grade):
+        self.grade = grade
+        return self.grade
+
+    def displayGrade (self) :
+        print " the grade is" , self.grade
+
+    def is_Valid (self) :
+        if self.grade <= self.max  and self.grade > self.min:
+            print "Not valid"
+        else:
+            print "Not valid"
+
+
+class Assignment:
+    min = 0
+    max = 100
+
+    def __init__(self, name, percentage, grade, deadline, status, desciprion):
+        self.name = name
+        self.percentage = percentage
+        self.grade = grade
+        self.deadline = deadline
+        self.status = status
+        self.description = description
+
+    def setname(self, name):
+        self.name = name
+        return self.name
+
+    def setpercentage(self, percantage):
+        self.percentage = percentage
+        return self.percenateg
+
+    def setgrade(self, grade):
+        self.grade = grade
+        return self.grade
+
+    def setdeadline(self, deadline):
+        self.deadline = deadline
+        return self.deadline
+
+    def setstatus(self, status):
+        self.status = status
+        return self.status
+
+    def setdescription(self, description):
+        self.description = description
+        return self.description
+
+    def getname(self, name):
+        self.name = name
+        return self.name
+
+    def getpercentage(self, percantage):
+        self.percatage = percentage
+        return self.percenateg
+
+    def getgrade(self, grade):
+        self.grade = greade
+        return self.grade
+
+    def getdeadline(self, deadline):
+        self.deadline = dfeadline
+        return self.deadline
+
+    def getstatus(self, status):
+        self.status = status
+        return self.status
+
+    def getdescription(self, description):
+        self.description = description
+        return self.description
+
+    def is_Late(self):
+        return self
+
+    def is_Graded(self):
+        return self
+
+
+Class Assingnmentgrade:
+
+     def __init__(self, course, assingment grade):
+         self.course = course
+         self.assingment = assignment
+         self.grade = Grade(grade)
+         self.state = 0
+
+def main():
+    c1 = Course("ENGS115")
+
+    asgn1 = Assignment("Assignment1", "Assign1Text", 20, "2018-09-16")
+    c1.assignments.append(asgn1)
+
+    st1 = Student("Marianna", "ENGS115")
+    st1.courses.append(c1)
+
+    asggrade1 = AssignmentGrade(c1, asgn1, 3)
+    st1.grades.append(asggrade1)
+
+    st1.displayGrades()
+
+    asgn1.name = "AAAA"
+    st1.displayGrades()
+
+
+main()
+
+
+
+
+
+
+
+
+
+
+
+
+
