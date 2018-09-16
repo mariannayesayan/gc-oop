@@ -1,142 +1,120 @@
-#!/usr/bin/python
-Class user:
+class User:
 
-   def __init__ (self, firstname, lastname, ID, password, username, mail):
-      self.firstname = firstname
-      self.lastname = lastname
-      self.ID = ID
-      self.password = password
-      self.username = username
-      self.mail = mail
+    def __init__(self, firstname, lastname, id, password, username, email):
+        self.firstname = firstname
+        self.lastname = lastname
+        self.id = id
+        self.password = password
+        self.username = username
+        self.email = email
 
+    def setfirstname(self, firstname):
+        if firstname != "":
+            self.firstname = firstname
+            return self.firstname
 
-   def set firstname(self, firstname)
-   if firstname != "":
-      self.firtname = firstname
-      return self.firstname
+    def setlastname(self, lastname):
+        if lastname != "":
+            self.lastname = lastname
+            return self.lastname
 
+    def setid(self, id):
+        if id != "":
+            self.id = id
+            return self.id
 
-   def set lastname(self, lastname)
-   if lastname != "":
-      self.lastname = lastname
-    return self.lasttname
+    def setpassword(self, password):
+        if password != "":
+            self.password = password
+            return self.id
 
+    def setusername(self, username):
+        if username != "":
+            self.username = username
+            return self.username
 
-   def set ID(self, ID)
-   if ID != "":
-      self.ID = Id
-      return self.ID
+    def setmail(self, mail):
+        if mail != "":
+            self.mail = mail
+            return self.mail
 
+    def getmail(self, mail):
+        if mail != "":
+            self.mail = mail
+            return self.mail
 
-   def set password(self, password)
-   if password != "":
-      self.password = password
-      return self.password
+    def getusername(self, username):
+        if username != "":
+            self.username = username
+            return self.username
 
+    def getID(self, ID):
+        if ID != "":
+            self.ID = ID
+            return self.ID
 
-   def set username(self, username)
-   if username != "":
-    self.username = username
-    return self.username
+    def getpassword(self, password):
+        if password != "":
+            self.password = password
+            return self.password
 
+    def getfirstname(self, firstname):
+        if firstname != "":
+            self.firstname = firstname
+            return self.firstname
 
-    def set mail(self, mail)
-    if mail != "":
-       self.mail = mail
-       return self.mail
+    def getlastname(self, lastname):
+        if lastname != "":
+            self.lastname = lastname
+            return self.lastname
 
+class Student(User):
 
-    def sget firstname(self, firstname)
-    if firstname != "":
-       self.firtname = firstname
-       return self.firstname
+    def __init_(self, firstname, lastname, id, password, username, email, courses, assignment, gpa):
+        self.courses = courses
+        self.assignment = assignment
+        self.gpa = gpa
+        User.__init__(self, firstname, lastname, id, password, username, email)
 
+    def setcourses(self, courses):
+        self.courses = courses
+        return self.courses
 
-    def get lastname(self, lastname)
-    if lastname != "":
-       self.lastname = lastname
-       return self.lasttname
+    def setassignment(self, assignment):
+        self.assignment = assignment
+        return self.assignment
 
+    def setgpa(self, gpa):
+        self.gpa = gpa
+        return self.gpa
 
-    def get ID(self, ID)
-    if ID != "":
-       self.ID = Id
-       return self.ID
+    def getgpa(self, gpa):
+        self.gpa = gpa
+        return self.gpa
 
+    def getassignment(self, assignment):
+        self.assignment = assignment
+        return self.assignment
 
-    def get password(self, password)
-    if password != "":
-       self.password = password
-       return self.password
+    def getcourses(self, courses):
+        self.courses = courses
+        return self.courses
 
+class Lecturer(User):
 
-    def get username(self, username)
-    if username != "":
-       self.username = username
-       return self.username
-
-
-    def get mail(self, mail)
-    if mail != "":
-       self.mail = mail
-       return self.mail
-
-Class Student(User):
-
-   def __init__ (self, firstname, lastname, ID, password, username, mail, courses, assignment, gpa):
-       self.courses = courses
-       self.assignment = assignment
-       self.gpa = gpa
-       user.init(self, firstname, lastname, ID, password, username, mail):
-
-
-   def set courses(self, courses):
-       self.courses = courses
-       return self.courses
-
-
-   def set assignment(self, assignment):
-       self.assignment = assignment
-       return self.assignment
-
-
-   def set gpa(self, gpa):
-       self.gpa = gpa
-       return self.gpa
-
-
-     def get courses(self, courses):
-         self.courses = courses
-         return self.courses
-
-
-     def get assignment(self, assignment):
-         self.assignment = assignment
-         return self.assignment
-
-
-     def get gpa(self, gpa):
-         self.gpa = gpa
-         return self.gpa
-
-
-Class lecturer (User):
-
-   def __init__ (self, firstname, lastname, ID, password, username, mail, office):
-       self.office = office
-       user.init(self, firstname, lastname, ID, password, username, mail)
-
-
-   def set office(self, office):
-       self.office = office
-       return self.office
-
-   def get office (self, office):
+    def __init__(self, firstname, lastname, id, password, username, email, office):
         self.office = office
-        return self. office
+        User.__init__(self, firstname, lastname, id, password, username, email)
 
+    def setoffice(self, office):
+        self.office = office
+        return self.office
 
-class Grade:
+    def getoffice(self, office):
+        self.office = office
+        return self.office
+
+class Grade: 
     min = 0
     max = 100
 
@@ -177,8 +155,8 @@ class Assignment:
         return self.name
 
     def setpercentage(self, percantage):
-        self.percentage = percentage
-        return self.percenateg
+        self.percentage = percantage
+        return self.percantage
 
     def setgrade(self, grade):
         self.grade = grade
@@ -201,15 +179,15 @@ class Assignment:
         return self.name
 
     def getpercentage(self, percantage):
-        self.percatage = percentage
-        return self.percenateg
+        self.percatage = percantage
+        return self.percantage
 
     def getgrade(self, grade):
-        self.grade = greade
+        self.grade = grade
         return self.grade
 
     def getdeadline(self, deadline):
-        self.deadline = dfeadline
+        self.deadline = deadline
         return self.deadline
 
     def getstatus(self, status):
@@ -227,14 +205,14 @@ class Assignment:
         return self
 
 
-Class Assingnmentgrade:
+class AssignmentGrade:
 
-     def __init__(self, course, assingment grade):
-         self.course = course
-         self.assingment = assignment
-         self.grade = Grade(grade)
-         self.state = 0
-
+    def __init__(self, course, assignment, grade):
+        self.course = course
+        self.assignment = assignment
+        self.grade = Grade(grade)
+        self.state = 0
+        
 def main():
     c1 = Course("ENGS115")
 
@@ -254,16 +232,3 @@ def main():
 
 
 main()
-
-
-
-
-
-
-
-
-
-
-
-
-
