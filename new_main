@@ -33,25 +33,25 @@ class User:
             self.username = username
             return self.username
 
-    def setmail(self, mail):
-        if mail != "":
-            self.mail = mail
-            return self.mail
+    def setemail(self, email):
+        if email != "":
+            self.email = email
+            return self.email
 
-    def getmail(self, mail):
-        if mail != "":
-            self.mail = mail
-            return self.mail
+    def getemail(self, email):
+        if email != "":
+            self.email = email
+            return self.email
 
     def getusername(self, username):
         if username != "":
             self.username = username
             return self.username
 
-    def getID(self, ID):
-        if ID != "":
-            self.ID = ID
-            return self.ID
+    def getid(self, id):
+        if id != "":
+            self.id = id
+            return self.id
 
     def getpassword(self, password):
         if password != "":
@@ -70,8 +70,9 @@ class User:
 
 class Student(User):
 
-    def __init_(self, firstname, lastname, id, password, username, email, courses, assignment, gpa):
+    def __init_(self, firstname, lastname, id, password, username, courses, email, assignment, gpa):
         self.courses = courses
+        self.grade = []
         self.assignment = assignment
         self.gpa = gpa
         User.__init__(self, firstname, lastname, id, password, username, email)
@@ -79,6 +80,10 @@ class Student(User):
     def setcourses(self, courses):
         self.courses = courses
         return self.courses
+
+    def setgrade(self, grade):
+        self.grade = grade
+        return self.grade
 
     def setassignment(self, assignment):
         self.assignment = assignment
@@ -100,6 +105,14 @@ class Student(User):
         self.courses = courses
         return self.courses
 
+    def displayGrades(self):
+        print (self.grade)
+
+    def displayInfo(self):
+        print ("Student name is " + self.firstname + " " + self.lastname)
+        for gradee in self.grade:
+            print ("Grade is " + str(gradee))
+
 class Lecturer(User):
 
     def __init__(self, firstname, lastname, id, password, username, email, office):
@@ -114,96 +127,94 @@ class Lecturer(User):
         self.office = office
         return self.office
 
-class Grade: 
+class Grade: #define a class
     min = 0
     max = 100
 
-    def __init__(self, grade):
+    def __init__(self, grade): #grade is a class variable
         self.grade = grade
 
-    def _get_(self):
-            return self.grade
-
-    def _set_(self, grade):
+    def _set_(self, grade): #method
         self.grade = grade
         return self.grade
 
-    def displayGrade (self) :
-        print " the grade is" , self.grade
+    def _get_(self, grade): #method
+        self.grade = grade
+        return self.grade
 
-    def is_Valid (self) :
-        if self.grade <= self.max  and self.grade > self.min:
-            print "Not valid"
+    def display(self): #display of the grade as an example
+        print 'grade = ', self.grade
+
+    def CkeckIFValid(self):
+        if self.grade <= self.max:
+            if self.grade > self.min:
+                print 'Valid'
         else:
-            print "Not valid"
+            print 'Not Valid'
 
+class Assignment:#define a class
 
-class Assignment:
-    min = 0
-    max = 100
-
-    def __init__(self, name, percentage, grade, deadline, status, desciprion):
+    def __init__(self, name, percent, grade, due, status, descr):#class variables
         self.name = name
-        self.percentage = percentage
+        self.percent = percent
         self.grade = grade
-        self.deadline = deadline
+        self.due = due
         self.status = status
-        self.description = description
+        self.descr = descr
 
-    def setname(self, name):
+    def setname(self, name):#method
         self.name = name
         return self.name
 
-    def setpercentage(self, percantage):
-        self.percentage = percantage
-        return self.percantage
+    def setpercent(self, percent):#method
+        self.percent = percent
+        return self.percent
 
-    def setgrade(self, grade):
+    def setgrade(self, grade):#method
         self.grade = grade
         return self.grade
 
-    def setdeadline(self, deadline):
-        self.deadline = deadline
-        return self.deadline
+    def setdue(self, due):#method
+        self.due = due
+        return self.due
 
-    def setstatus(self, status):
+    def setstatus(self, status):  # method
         self.status = status
         return self.status
 
-    def setdescription(self, description):
-        self.description = description
-        return self.description
+    def setdescr(self, descr):  # method
+        self.descr = descr
+        return self.descr
 
-    def getname(self, name):
+    def getname(self, name):#method
         self.name = name
         return self.name
 
-    def getpercentage(self, percantage):
-        self.percatage = percantage
-        return self.percantage
+    def getpercent(self, percent):#method
+        self.percent = percent
+        return self.percent
 
-    def getgrade(self, grade):
+    def getgrade(self, grade):#method
         self.grade = grade
         return self.grade
 
-    def getdeadline(self, deadline):
-        self.deadline = deadline
-        return self.deadline
+    def getdue(self, due):#method
+        self.due = due
+        return self.due
 
-    def getstatus(self, status):
+    def getstatus(self, status):  # method
         self.status = status
         return self.status
 
-    def getdescription(self, description):
-        self.description = description
-        return self.description
+    def getdescr(self, descr):  # method
+        self.descr = descr
+        return self.descr
 
-    def is_Late(self):
+    def CkeckIfLate(self):
         return self
 
-    def is_Graded(self):
+    def CheckIfGraded(self):
         return self
-
 
 class AssignmentGrade:
 
@@ -212,23 +223,67 @@ class AssignmentGrade:
         self.assignment = assignment
         self.grade = Grade(grade)
         self.state = 0
-        
+
+class Course:#define a class
+
+    def __init__(self, title, id, credits, lecturername, assignment):#these are class variables
+        self.title = title
+        self.id = id
+        self.credits = credits
+        self.lecturername = lecturername
+        self.assignment = assignment
+        self.assignments = []
+
+    def _set1_(self, title):#method
+        return self.title
+
+    def _get1_(self, title):#method
+        return self.title
+
+    def _set2_(self, id):  # method
+        return self.id
+
+    def _get2_(self, id):  # method
+        return self.id
+
+    def _set3_(self, credits):  # method
+        return self.credits
+
+    def _get3_(self, credits):  # method
+        return self.credits
+
+    def _set4_(self, lecturername):  # method
+        return self.lecturername
+
+    def _get4_(self, lecturername):  # method
+        return self.lecturername
+
+    def _set5_(self, assignment):  # method
+        return self.assignment
+
+    def _get5_(self, assignment):  # method
+        return self.assignment
+
 def main():
-    c1 = Course("ENGS115")
+    c1 = Course("ENGS115", "Data Structures", "3", "Satenik", "555")
 
-    asgn1 = Assignment("Assignment1", "Assign1Text", 20, "2018-09-16")
-    c1.assignments.append(asgn1)
+    asgn1 = Assignment("Assignment1", "Assign1Text", 20, "2018-09-16", "a", "Desc")
+    asgn2 = Assignment("Assignment1", "Assign1Text", 20, "2018-09-16", "a", "Desc")
+    asgn3 = Assignment("Assignment1", "Assign1Text", 20, "2018-09-16", "a", "Desc")
+    c1.assignments.append([asgn1, asgn2, asgn3])
 
-    st1 = Student("Marianna", "ENGS115")
-    st1.courses.append(c1)
+    st1 = Student("Mariana", "ENGS115", "a", "b", "c", "d")
+    st1.setcourses(c1)
 
     asggrade1 = AssignmentGrade(c1, asgn1, 3)
-    st1.grades.append(asggrade1)
+    asggrade2 = AssignmentGrade(c1, asgn2, 34)
+    asggrade3 = AssignmentGrade(c1, asgn3, 35)
+    st1.setgrade([asggrade1.grade.grade, asggrade2.grade.grade, asggrade3.grade.grade])
 
-    st1.displayGrades()
+    # st1.displayGrades()
 
-    asgn1.name = "AAAA"
-    st1.displayGrades()
-
+    #asgn1.name = "AAAA"
+    st1.displayInfo()
 
 main()
+
