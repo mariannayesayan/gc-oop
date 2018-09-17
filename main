@@ -278,7 +278,7 @@ def main():
     asgn2 = Assignment("Assignment#2", "Assign1Text", 20, "2018/09/16", "status", "Inheritance")
     course1.assignments.append([asgn1, asgn2])
     # name, percent, grade, due, status, description
-    st1 = Student("Marianna", "Yesayan", "A09170401", "ENGS115", "b", "c")
+    st1 = Student("Marianna", "Yesayan", "A09170278", "ENGS115", "b", "c")
     st1.setcourses(course1)
 
     asggrade1 = AssignmentGrade(course1, asgn1, 99)
